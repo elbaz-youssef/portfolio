@@ -1,0 +1,111 @@
+nav ul {
+    position: relative;
+    /* width: 200px; */
+    /* height: calc(100vh - 60px); */
+    background-color: #272829;
+    /* border-radius: 50px; */
+    color: var(--gray-color);
+    /* padding-left: 20px;
+    padding-right: 20px; */
+}
+
+nav ul .list-items {
+    position: absolute;
+    right: -100vw;
+    top: 60px;
+    width: 200px;
+    height: calc(100vh - 60px);
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: right 0.7s ease-in-out;
+    background-color: #272829;
+    z-index: 10;
+
+}
+
+nav ul .list-items.active {
+    /* position: relative; */
+    right: 0;
+}
+
+@media (min-width: 640px) {
+    nav ul {
+        display: flex;
+        border-radius: 50px;
+        overflow: hidden;
+        background-color: transparent;
+    }
+    nav ul .list-items {  
+        position: relative;
+        right: -100vw;
+        top: 0;
+        /* right: 0; */
+        display: flex;
+        flex-direction: row !important;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 50px;
+        transition: right 0.5s ease-in;
+        z-index: -1;
+    }
+    nav ul .list-items.active {
+        /* right: 10px; */
+        position: relative;
+        z-index: 1;
+    }
+    nav ul span {
+        width: 40px;
+        height: 40px;
+        background-color: #272829;
+        border-radius: 50%;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+nav ul li a {
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a,
+nav ul li a.active,
+nav ul span {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+
+nav ul li a {
+    position: relative;
+}
+
+nav ul li.active a,
+nav ul li a:hover {
+    color: var(--white-color);
+}
+
+nav ul li.active a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+
+nav ul span {
+    color: var(--white-color);
+}
+
+nav ul span svg {
+    font-size: 20px;
+}

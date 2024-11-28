@@ -1,0 +1,116 @@
+.contact-container {
+    /* display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px; */
+}
+
+.contact-container .contact-info {
+    /* position: relative; */
+    /* padding-left: 60px; */
+    /* grid-column: span 4;
+    display: flex;
+    flex-wrap: wrap; */
+    /* justify-content: center; */
+    /* gap: 20px; */
+
+}
+
+
+.contact-container .contact-info > div {
+    /* position: relative;
+    padding: 30px 20px 30px 60px;
+    background-color: var(--secondary-black-color);
+    border-radius: 8px;
+    min-width: 200px; */
+}
+
+.contact-container .contact-info > div svg.phone {
+    rotate: 90deg;
+}
+
+.contact-container .contact-info > div i {
+    /* position: absolute;
+    left: 10px;
+    top: 30px;
+    width: 2em;
+    color: var(--primary-color); */
+}
+
+.contact-container .contact-info > div h4 {
+    /* color: var(--white-color);
+    font-size: 1.2em; */
+}
+
+.contact-container .contact-info > div span {
+    /* display: block;
+    color: var(--gray-color);
+    font-size: 0.9em;
+    margin-top: 5px; */
+}
+
+.contact-container .contact-form {
+    /* grid-column: span 8;
+    margin-top: 20px; */
+}
+
+
+.contact-container .contact-form label {
+    /* display: block;
+    margin-bottom: 3px; */
+}
+
+.contact-container .contact-form input,
+.contact-container .contact-form textarea {
+    /* border: 2px solid #555;
+    background-color: transparent;
+    outline: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 5px; */
+}
+
+
+
+.contact-form > div {
+    /* display: flex;
+    flex-direction: row; */
+    /* flex-wrap: wrap; */
+    /* gap: 10px;
+    margin-bottom: 15px; */
+}
+
+/* @media(max-width: 400px) {
+    .contact-form > div {
+        flex-direction: column;
+    }
+} */
+
+/* .contact-form > div > div {
+    width: 50%;
+} */
+/* @media(min-width: 400px) {
+    .contact-form > div > div {
+        width: 50%;
+    }
+} */
+/* .contact-form > input[type="text"],
+textarea {
+    margin-bottom: 15px;
+} */
+/* 
+i {
+    font-size: 2em;
+    color: var(--primary-color);
+} */
+
+
+/* @media(max-width: 767.98px) {
+    .contact-container .contact-info {
+        grid-column: span 12;
+    }
+    .contact-container .contact-form {
+        grid-column: span 12;
+    }
+
+} */
+

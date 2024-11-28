@@ -1,0 +1,97 @@
+.portfolio-container .filter-projects ul {
+    /* display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 30px; */
+}
+
+.portfolio-container .filter-projects ul li a {
+    /* transition: color 0.3s; */
+}
+
+.portfolio-container .filter-projects ul li.active a,
+.portfolio-container .filter-projects ul li:hover a {
+    color: var(--primary-color);
+}
+
+.projects-content {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    gap: 20px;
+    position: relative; */
+}
+
+.projects-content .project-info {
+    /* padding: 10px;
+    border: 2px solid var(--secondary-black-color);
+    border-radius: 8px;
+    max-width: 400px; */
+}
+.projects-content .project-info .project-img {
+    /* position: relative; */
+}
+
+.projects-content .project-info .project-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.projects-content .project-info .project-img:hover::after {
+    transform: scaleY(100%);
+}
+
+.projects-content .project-info img {
+    /* height: 300px;
+    border-radius: 8px; */
+}
+
+.projects-content .project-info h3 {
+    /* margin-top: 10px; */
+}
+
+.projects-content .project-info .project-img p {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    opacity: 0;
+    visibility: 0;
+    transition: 0.5s 0.1s;
+    z-index: 2;
+    width: calc(100% - 40px); */
+}
+
+.projects-content .project-info .project-img:hover p {
+    /* opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%); */
+}
+
+.projects-content .project-info ul {
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px; */
+}
+
+.projects-content .project-info ul li {
+    /* width: fit-content;
+    padding: 4px 8px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    color: var(--primary-color); */
+}
+

@@ -1,0 +1,159 @@
+/* 
+/* .home {
+    cursor: none;
+    min-height: calc(100vh);
+}
+.home-container {
+    position: relative;
+    height: 100vh;
+}
+.home-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    justify-content: center;
+
+} */
+/* @media (max-width: 768px) {
+    .home-container {
+        display: grid;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+    .home-content {
+        width: 100%;
+    }
+    .home-content .content {
+        position: relative;
+        top: 60px;
+        transform: none;
+    }
+    .home-img {
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+    }
+} */
+/* .home-content { */
+    /* position: relative; */
+    /* width: calc(100% - 80px); */
+    /* margin-inline: auto; */
+    /* text-align: center */
+/* } */
+
+/* @media(min-width: 640px) {
+    .home-content {
+        width: calc(100% - 100px) !important;
+    }
+} */
+
+/* .home-content .content{ */
+    /* position: absolute; */
+    /* width: 100%; */
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+/* } */
+
+/* .home-content .content h1 {
+    margin-top: -8px;
+} */
+
+/* .home-content .content p {
+    font-size: clamp(0.8em, 2vw ,1.1em);
+    color: var(--gray-color);
+    font-weight: 600;
+} */
+
+/* .home-img .img {
+    width: 200px;
+    height: 300px !important; */
+    /* border-radius: 100%;  */
+    /* border: 5px solid var(--primary-color);
+    /* margin-inline: auto;
+    background-image: url("./images/beautiful-person_LE_auto_x4-transformed.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+} */
+
+.social-media-icons {
+    /* position: absolute;
+    top: 50%;
+    right: 0; */
+    transform: translateY(-50%);
+}
+
+/* @media (min-width: 768px) { */
+    /* .home-container {
+        display: flex;
+        height: 100vh;
+    } */
+    /* .home-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        justify-content: center;
+    
+    } */
+    /* .home-content {
+        width: 50% !important;
+        text-align: left !important;
+    } */
+    /* .home-img {
+        width: 50%;
+        height: calc(100vh - 60px);
+        border: none;
+        border-radius: 0 !important;
+        margin-inline: auto;
+        background-image: url("./images/beautiful-person_LE_auto_x4-transformed.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    } */
+/* } */
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.cursor-inside {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+}
+
+.cursor-inside.active {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    opacity: 0.3;
+}
+
+.cursor-outline {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--primary-color);
+}
+
+.cursor-outline.inactive {
+    display: none;
+}
+
+/* .job-title {
+    color: var(--primary-color);
+}
+
+@media(min-width: 768px) {
+    .home-container {
+        flex-direction: row-reverse !important;
+    }
+}  */
+
