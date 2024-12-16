@@ -3,16 +3,75 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './About.css'
 import { faBirthdayCake, faEnvelope, faMapMarkedAlt, faMobile } from '@fortawesome/free-solid-svg-icons'
 import { Resume_Content } from '../../constants'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
+import { useInView } from 'react-intersection-observer';
 const About = () => {
+
+  const aboutRef = useRef();
+  const {scrollYProgress} = useScroll({
+    target: aboutRef
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [-30, 30]);
+
+
+  const { ref, inView } = useInView({
+    triggerOnce: false,  // Trigger the animation only once when it's in view
+    threshold: 0.7,     // Trigger when 30% of the element is in view
+  });
+
+  const staggeredAnimation = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 100,
+        damping: 25,
+        delayChildren: 0.2, // Delay before starting staggered animation
+        staggerChildren: 1, // Delay between each child
+      },
+    },
+  };
+
+  const childAnimation = {
+    hidden: { opacity: 0, x: -100 },
+    visible: (index) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: index * 0.1,
+        duration: 0.5
+        // type: 'spring',
+        // stiffness: 100,
+        // damping: 25,
+      },
+    })
+  };
+  const educationExperienceAnimation = {
+    hidden: {
+      opacity: 0,
+      y: 100
+    },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: index * 0.1,
+      }
+    })
+  }
   return (
     <div className="about">
       <div className="about-container flex flex-col md:flex-row gap-5">
         <div className="about-img">
-            <div className="img w-[250px] h-[400px] relative border-2 border-[var(--primary-color)] p-5 rounded-xl">
+            <div ref={aboutRef} className="img w-[250px] h-[400px] relative border-2 border-[var(--primary-color)] p-5 rounded-xl">
                 <img src="images/beautiful-person.png" alt="profile image" width="300" height="300" />
             </div>
         </div>
-        <div className="about-content">
+        <motion.div className="about-content" style={{y}}>
             <h3 className="text-[var(--white-color)] text-[1.3em] mt-5 mb-1 capitalize font-bold">{Resume_Content.about.title1}</h3>
             <p className="text-[var(--gray-color)]">{Resume_Content.about.description1}</p>
             <h3 className="text-[var(--white-color)] text-[1.3em] mt-5 mb-1 font-bold capitalize">{Resume_Content.about.title2}</h3>
@@ -27,16 +86,34 @@ const About = () => {
                 </div>
               )}
             </div>
-        </div>
+        </motion.div>
         
       </div>
 
-      <div className="awards grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-5 pt-8 pb-8">
+      <div
+        // ref={ref}
+        // variants={staggeredAnimation}
+        // initial= "hidden"
+        // animate= {inView ? 'visible' : 'hidden'}
+        // initial={{ opacity: 0, x: -100 }}
+        // animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -100 }}
+        // transition={{ duration: 0.5 }}
+        className="awards grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-5 pt-8 pb-8" >
           {Resume_Content.about.awards.map((award, index) => 
-            <div key={index + 1} className="text-center bg-[var(--secondary-black-color)] py-[30px] px-[20px]">
+            <motion.div 
+              key={index + 1} 
+              variants={childAnimation}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{
+                once: true
+              }}
+              custom={index}
+                // animate={inView ? 'visible' : 'hidden'}
+              className="text-center bg-[var(--secondary-black-color)] py-[30px] px-[20px]" >
               <p className="text-[4em] text-[var(--gray-color]">{award.number}</p>
               <span className='block mt-[-10px]'>{award.title}</span>
-            </div>
+            </motion.div>
           )}
           
         </div>
@@ -62,12 +139,19 @@ const About = () => {
             <h2 className="heading text-left mb-[10px]">My Education</h2>
             {
               Resume_Content.education.map((education, index) => 
-                <div key={index + 1} className="education-content bg-[var(--secondary-black-color)] rounded-md py-[30px] px-[20px] mb-5">
+                <motion.div
+                  key={index + 1}
+                  variants={educationExperienceAnimation}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{once: true}}
+                  custom={index}
+                  className="education-content bg-[var(--secondary-black-color)] rounded-md py-[30px] px-[20px] mb-5">
                   <span className="year inline-block bg-[var(--primary-color)] text-[var(--white-color)] px-[5px] rounded-md text-[0.8em]">{education.date}</span>
                   <h3 className="title font-[600] text-[var(--white-color)] text-[1.4em] mt-[10px] mb-[10px]">{education.title}</h3>
                   <span className="place text-[var(--primary-color)]">{education.place}</span>
                   <p className="descr text-[var(--gray-color)] mt-5">{education.description}</p>
-                </div>
+                </motion.div>
             )}
             
             {/* <div className="education-content">
@@ -87,12 +171,19 @@ const About = () => {
           <h2 className="heading text-left mb-[10px]">My Experience</h2>
             {
               Resume_Content.experience.map((experience, index) => 
-                <div key={index + 1} className="experience-content bg-[var(--secondary-black-color)] rounded-md py-[30px] px-[20px] mb-5">
+                <motion.div 
+                  key={index + 1} 
+                  variants={educationExperienceAnimation}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{once: true}}
+                  custom={index}
+                  className="experience-content bg-[var(--secondary-black-color)] rounded-md py-[30px] px-[20px] mb-5">
                   <span className="year inline-block bg-[var(--primary-color)] text-[var(--white-color)] px-[5px] rounded-md text-[0.8em]">{experience.date}</span>
                   <h3 className="title font-[600] text-[var(--white-color)] text-[1.4em] mt-[10px] mb-[10px]">{experience.title}</h3>
                   <span className="place text-[var(--primary-color)]">{experience.place}</span>
                   <p className="descr text-[var(--gray-color)] mt-5">{experience.description}</p>
-                </div>
+                </motion.div>
             )}
             {/* <div className="experience-content">
               <span className="year">2010-2014</span>

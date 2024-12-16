@@ -8,6 +8,7 @@ import { Home_Content } from '../../constants';
 import {motion} from 'framer-motion';
 import './Home.css';
 import { bounce, fadeIn, imgVariation, pageVariants, slide, slideFromOffset, staggerContainer } from '../../variants';
+import Preload from '../../components/Preload/Preload';
 
 
 
@@ -25,12 +26,12 @@ const Home = ({isMouseActive, setIsMouseActive, handleMouseEnter, handleMouseLea
         window.addEventListener('mousemove', handleMouseMove);
     }, [])
   return (
-    <motion.section 
-        variants={pageVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-        transition={{ duration: 1.5 }}
+    <>
+      <Preload />
+      <motion.section 
+        initial={{visibility: "hidden", opacity: 0}}
+        animate={{visibility: "visible", opacity: 1}}
+        transition={{delay: 1}}
         className="home">
   <div className="container mx-auto px-[15px]">
     <div className="home-container relative h-[calc(100vh-100px)] md:overflow-hidden flex flex-col md:flex-row-reverse md:items-center">
@@ -62,9 +63,9 @@ const Home = ({isMouseActive, setIsMouseActive, handleMouseEnter, handleMouseLea
         // }}
       >
         <motion.div 
-            // variants={staggerContainer}
-            // initial="hidden"
-            // animate="visible"
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
             className="content text-center md:text-left">
           <motion.h3
             className="font-bold"
@@ -152,6 +153,8 @@ const Home = ({isMouseActive, setIsMouseActive, handleMouseEnter, handleMouseLea
     </div>
   </div>
 </motion.section>
+    </>
+    
   )
 
 }

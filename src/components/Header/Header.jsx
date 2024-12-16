@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom';
 import { slide } from '../../variants';
 
 const Header = ({handleMouseEnter, handleMouseLeave}) => {
+  
   return (
     <motion.header 
-      // initial={{y: -100}}
-      // animate={{y: 0}}
-      // transition={{duration: 0.5}}
+      initial={{visibility: "hidden", opacity: 0}}
+      animate={{visibility: "visible", opacity: 1}}
+      transition={{delay: 1}}
       className='fixed w-[100%] top-0 left-0 z-50'>
       <div className="container mx-auto px-[15px]">
         <div className="header-container flex justify-between items-center h-[60px]">
@@ -18,7 +19,7 @@ const Header = ({handleMouseEnter, handleMouseLeave}) => {
                 initial="hidden"
                 animate="visible"
                 className="logo">
-                <Link to={`/`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="text-[var(--primary-color)]">Youssef.</Link>
+                <Link onClick={{}} to={`/`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="text-[var(--primary-color)]">Youssef.</Link>
             </motion.div>
             <motion.nav
               variants={slide("up", 60, 0.3)}

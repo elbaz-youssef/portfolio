@@ -4,6 +4,7 @@ export const staggerContainer = {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
+        delay: 1
       },
     },
 };
@@ -30,12 +31,12 @@ export const slide = (direction, value, delay) => {
             opacity: 1,
             x: 0,
             y: 0,
-            // transition: {
-            //     duration: 1,
-            //     delay: delay,
-            //     // type: "spring"
-            //     // ease: "easeOut"
-            // }
+            transition: {
+                duration: 1,
+                delay: delay,
+                // type: "spring"
+                // ease: "easeOut"
+            }
         }
     }
 }

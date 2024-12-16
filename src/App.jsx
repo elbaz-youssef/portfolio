@@ -9,6 +9,7 @@ import Contact from './pages/Contact/Contact';
 // import Test from './pages/Test/Test';
 import {Route, BrowserRouter as Router, Routes, useLocation} from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion';
+import Preload from './components/Preload/Preload';
 
 function App() {
   const [isMouseActive, setIsMouseActive] = useState(false);
@@ -32,6 +33,7 @@ function App() {
           <Route path="/resume" element={<Resume />} />
           <Route path="/projects" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/preload" element={<Preload />} />
         </Routes>
       {/* </AnimatePresence> */}
      

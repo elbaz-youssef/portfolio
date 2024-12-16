@@ -21,7 +21,7 @@ const Navbar = ({handleMouseEnter, handleMouseLeave}) => {
         <div className={`list-items flex flex-col ${isNavBarOpen && 'active'}`}>
             {
                 Links.map((link, index) => 
-                    <li key={index + 1} onClick={(e) => addActiveClassToElm(e.target.parentElement)} className={`${index === 0 && 'active'}`}>
+                    <li key={index + 1} onClick={(e) => {addActiveClassToElm(e.target.parentElement); setIsNavBarOpen(false)}} className={`${index === 0 && 'active'}`}>
                         <Link to={`${link.href}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>{link.content}</Link>
                     </li>
                 )

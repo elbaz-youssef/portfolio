@@ -79,6 +79,19 @@
     margin-bottom: 15px; */
 }
 
+
+.contact-form label {
+    color: var(--gray-color);
+}
+
+/* .contact-form input,
+.contact-form textarea {
+    border-color: var(--gray-color);
+} */
+
+/* .contact-form input:focus {
+    border-color: var(--white-color);
+} */
 /* @media(max-width: 400px) {
     .contact-form > div {
         flex-direction: column;
