@@ -44,7 +44,7 @@ const Home = ({isMouseActive, setIsMouseActive, handleMouseEnter, handleMouseLea
         animate="visible"
       >
         <div className="img translate-y-0 md:translate-y-[-50px] w-[250px] h-[250px] md:w-full md:h-fit rounded-full md:rounded-none overflow-hidden mx-auto">
-          <img src="./images/beautiful-person_LE_auto_x4-transformed.jpeg" alt="personal image" />
+          <img src="/images/beautiful-person_LE_auto_x4-transformed.jpeg" alt="personal image" />
         </div>
       </motion.div>
 
