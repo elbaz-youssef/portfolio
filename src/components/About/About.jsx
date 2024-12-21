@@ -68,7 +68,7 @@ const About = () => {
       <div className="about-container flex flex-col md:flex-row gap-5">
         <div className="about-img">
             <div ref={aboutRef} className="img w-[250px] h-[400px] relative border-2 border-[var(--primary-color)] p-5 rounded-xl">
-                <img src="images/beautiful-person.png" alt="profile image" width="300" height="300" />
+                <img src="/portfolio/images/beautiful-person.png" alt="profile image" width="300" height="300" />
             </div>
         </div>
         <motion.div className="about-content" style={{y}}>
