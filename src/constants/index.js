@@ -225,7 +225,7 @@ export const Projects_Content = {
         },
         {
             id: 2,
-            img: 'images/ecommerce1.jpg',
+            img: '/images/ecommerce1.jpg',
             title: 'ecommerce website',
             descr: 'This is an ecommerce website that contain many features of show cart and edit profile and so more',
             category: 'ecommerce',
@@ -233,7 +233,7 @@ export const Projects_Content = {
         },
         {
             id: 3,
-            img: 'images/movies1.jpg',
+            img: '/images/movies1.jpg',
             title: 'movies website',
             descr: 'This is a movies website that get data from an api and show it',
             category: 'movies',
@@ -241,7 +241,7 @@ export const Projects_Content = {
         },
         {
             id: 4,
-            img: 'images/portfolio2.jpg',
+            img: '/images/portfolio2.jpg',
             title: 'Portfolio website',
             descr: 'This is a portfolio website that show my skills and experience',
             category: 'portfolio',
@@ -249,7 +249,7 @@ export const Projects_Content = {
         },
         {
             id: 5,
-            img: 'images/game1.jpg',
+            img: '/images/game1.jpg',
             title: 'game app',
             descr: 'This is a mobile game application',
             category: 'games',
