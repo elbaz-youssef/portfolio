@@ -28,12 +28,12 @@ function App() {
       {/* <AnimatePresence mode="wait"> */}
         <Header handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} />
         <Routes>
-          <Route path="/" element={<Home isMouseActive={isMouseActive} setIsMouseActive={setIsMouseActive} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/projects" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/preload" element={<Preload />} />
+          <Route path="/portfolio" element={<Home isMouseActive={isMouseActive} setIsMouseActive={setIsMouseActive} handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} />} />
+          <Route path="/portfolio/services" element={<Services />} />
+          <Route path="/portfolio/resume" element={<Resume />} />
+          <Route path="/portfolio/projects" element={<Portfolio />} />
+          <Route path="/portfolio/contact" element={<Contact />} />
+          <Route path="/portfolio/preload" element={<Preload />} />
         </Routes>
       {/* </AnimatePresence> */}
      

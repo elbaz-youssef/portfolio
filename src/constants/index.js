@@ -3,23 +3,23 @@ import { faBirthdayCake, faChartLine, faCode, faEnvelope, faMapMarkedAlt, faMobi
 
 export const Links = [
     {
-        href: "/", 
+        href: "/portfolio", 
         content: "Home"
     },
     {
-        href: "/services", 
+        href: "/portfolio/services", 
         content: "Services"
     },
     {
-        href: "/resume", 
+        href: "/portfolio/resume", 
         content: "Resume"
     },
     {
-        href: "/projects", 
+        href: "/portfolio/projects", 
         content: "Projects"
     },
     {
-        href: "/contact", 
+        href: "/portfolio/contact", 
         content: "Contact"
     }
 ];

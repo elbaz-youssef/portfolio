@@ -19,7 +19,7 @@ const Header = ({handleMouseEnter, handleMouseLeave}) => {
                 initial="hidden"
                 animate="visible"
                 className="logo">
-                <Link onClick={{}} to={`/`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="text-[var(--primary-color)]">Youssef.</Link>
+                <Link onClick={{}} to={`/portfolio`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="text-[var(--primary-color)]">Youssef.</Link>
             </motion.div>
             <motion.nav
               variants={slide("up", 60, 0.3)}
